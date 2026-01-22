@@ -19,6 +19,19 @@ Project Description: The Weather Data Pipeline project fetches daily weather dat
 - One-command setup using Docker Compose.
 - Visualizes weather data with clean and interactive dashboards via Metabase.
 
+## 📊 Dashboards (Metabase)
+
+The project includes interactive dashboards built using Metabase to visualize real-time UK weather data.
+
+### UK Realtime Weather Dashboard
+![UK Weather Dashboard](dashboards/uk_weather_dashboard.png)
+
+The dashboard shows:
+- Average temperature by city
+- Average humidity by city
+- Total number of monitored cities
+- City-level comparisons and insights
+
 🧱 Project Structure
 
 - `dags/` → Contains Airflow DAGs and the main ETL script.
