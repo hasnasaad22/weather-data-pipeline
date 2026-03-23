@@ -1,24 +1,24 @@
 # 🌦️ Weather Data Pipeline
 
 ## Project Description
-The Weather Data Pipeline project fetches daily weather data for selected UK cities using the OpenWeatherMap API, stores it in a PostgreSQL database, orchestrates the process using Apache Airflow, and visualizes the data with Metabase. Everything runs in isolated containers using Docker Compose for easy setup.
+An end-to-end data engineering pipeline that collects daily weather data for UK cities using the OpenWeatherMap API, stores it in PostgreSQL, orchestrates workflows with Apache Airflow, and visualizes insights using Metabase — all fully containerized with Docker Compose.
 
 ## 🛠️ Tech Stack
 
-- **Apache Airflow**: For ETL orchestration and scheduling.
-- **PostgreSQL**: For structured data storage.
-- **Docker Compose**: To run all services together in containers.
-- **Metabase**: For interactive dashboards and data visualization.
-- **pgAdmin**: For easy database management.
+- **Apache Airflow** → Workflow orchestration & scheduling  
+- **PostgreSQL** → Data storage layer  
+- **Docker Compose** → Containerized environment  
+- **Metabase** → Data visualization & dashboards  
+- **pgAdmin** → Database management  
 
 ## 🚀 Features
 
-- Fetches daily weather data for multiple cities using latitude and longitude.
-- Stores data in a normalized PostgreSQL schema.
-- Automates and schedules data pipelines with Airflow.
-- Allows easy customization of cities and date ranges.
-- One-command setup using Docker Compose.
-- Visualizes weather data with clean and interactive dashboards via Metabase.
+- Automated daily weather data ingestion  
+- Scalable ETL pipeline using Airflow DAGs  
+- Normalized PostgreSQL schema  
+- Easy configuration for cities and parameters  
+- One-command full environment setup  
+- Interactive dashboards for analysis 
 
 ## 📊 Dashboards (Metabase)
 
@@ -27,18 +27,24 @@ Interactive dashboards built using Metabase to visualize real-time UK weather da
 ### UK Realtime Weather Dashboard
 ![UK Weather Dashboard](dashboards/uk_weather_dashboard.png)
 
-**The dashboard shows:**
-- Average temperature by city
-- Average humidity by city
-- Total number of monitored cities
-- City-level comparisons and insights
+### Key Insights
+- Average temperature per city  
+- Average humidity per city  
+- City comparison analytics  
+- Total monitored cities  
 
 ## 🧱 Project Structure
 
-- `dags/` → Contains Airflow DAGs and the main ETL script.
-- `postgres/` → Contains `init.sql` for initializing the database.
-- `docker-compose.yml` → Runs all services (Airflow, Postgres, pgAdmin, Metabase).
-- `.env` → Stores sensitive variables such as passwords and API key.
+- `dags/` → Airflow DAGs and ETL scripts  
+- `postgres/` → Database initialization (`init.sql`)  
+- `docker-compose.yml` → Runs all services  
+- `.env` → Environment variables (API keys, credentials)  
+
+## 🧱 Architecture
+
+The pipeline follows a simple ETL workflow:
+
+OpenWeatherMap API → Apache Airflow DAGs → PostgreSQL Database → Metabase Dashboards
 
 ## 🧪 Setup Instructions
 
@@ -73,13 +79,12 @@ Log in using the credentials set in your `.env` file. Run DAGs in Airflow, query
 
 ## ✅ Notes
 
-- Ensure Docker and Docker Compose are installed before running.
-- You can easily modify DAGs or add new cities.
+- Ensure Docker and Docker Compose are installed
+- DAGs can be modified or extended for more cities
 - All data persists safely in PostgreSQL even if containers are stopped.
 
 ## 🙏 Credits
-
-- Original project inspiration: [chiranjeevi-sagi/weather-data-pipeline](https://github.com/chiranjeevi-sagi/weather-data-pipeline)  
+ 
 - OpenWeatherMap API: [https://openweathermap.org/api](https://openweathermap.org/api)  
 - Metabase for visualization: [https://www.metabase.com](https://www.metabase.com)  
 - PostgreSQL for database management: [https://www.postgresql.org](https://www.postgresql.org)
